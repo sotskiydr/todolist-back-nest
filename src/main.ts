@@ -10,7 +10,7 @@ import { ValidationPipe } from "./pipes/validation.pipe";
     const PORT = process.env.PORT || 5000;
 
     const app = await NestFactory.create(AppModule)
-
+    app.enableCors();
     const config = new DocumentBuilder()
       .setTitle('TodoList')
       .setDescription('TodoList REST API documentation')

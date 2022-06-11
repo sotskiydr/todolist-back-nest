@@ -28,7 +28,7 @@ export class AuthController {
 
   @ApiOperation({summary: 'Logout user'})
   @ApiOkResponse({status: 201, description: 'Logout success'})
-  @Get('/logout')
+  @Post('/logout')
   @UseGuards(JwtAuthGuard)
   logout(@Req() token: any){
     const id = token.user.id
